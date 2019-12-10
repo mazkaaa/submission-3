@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="UTF-8" />
+	<title>Fooball</title>
+	<meta name="description" content="Information about football competition" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="css/materialize.min.css" />
+	<link rel="manifest" href="manifest.json" />
+	<link rel="stylesheet" href="css/style.css" />
+	<meta name="theme-color" content="#039be5" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  </head>
+  <body>
+	<!-- Navigasi -->
+	<nav class="light-blue darken-1" role="navigation">
+	  <div class="nav-wrapper container">
+		<a href="./index.html" class="brand-logo" id="logo-container">Fooball</a>
+		<a href="./index.html" class="sidenav-trigger" data-target="nav-mobile">
+		  <i class="material-icons">arrow_back</i>
+		</a>
+		<ul class="topnav right hide-on-med-and-down"></ul>
+		<ul class="sidenav" id="nav-mobile"></ul>
+	  </div>
+	</nav>
+	<!-- Akhir Navigasi -->
+
+	<div class="container" id="body-content"></div>
+
+	<div class="container">
+		<div class="card grey lighten-5">
+			<div class="row center center-align">
+				<div class="col xl12"><img id="team-emblem" src="" class="responsive-img"></div>
+			</div>
+			<div class="row">
+				<div class="col xl4 offset-xl1">
+					<h5>Team name: </h5>
+				</div>
+				<div class="col xl6">
+					<h5 id="team-name">Team name</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col xl4 offset-xl1">
+					<h5>Address: </h5>
+				</div>
+				<div class="col xl6">
+					<h5 id="team-address">Team address</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col xl4 offset-xl1">
+					<h5>Phone: </h5>
+				</div>
+				<div class="col xl6">
+					<h5 id="team-phone">Team phone</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col xl4 offset-xl1">
+					<h5>Website: </h5>
+				</div>
+				<div class="col xl6">
+					<a id="team-website-url" href=""><h5 id="team-website">Team web</h5></a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col xl4 offset-xl1">
+					<h5>Email: </h5>
+				</div>
+				<div class="col xl6">
+					<h5 id="team-email">Team email</h5>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col xl12 center center-align mb25">
+					<button id="addTeamToProfile" class="waves-effect waves-light btn">Add to profile</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/api.js"></script>
+	<script
+	  type="text/javascript"
+	  src="https://unpkg.com/snarkdown@1.0.2/dist/snarkdown.umd.js"
+	></script>
+    <script src="js/materialize.min.js"></script>
+	
+	<script src="js/addButtonDb.js"></script>
+	<script src="js/idb.js"></script>
+	<script src="js/database.js"></script>
+	<script src="js/registrar.js"></script>
+	<script>
+	  document.addEventListener("DOMContentLoaded", function() {
+		getTeamsById();
+		listenButtonTeam();
+	  });
+	</script>
+  </body>
+</html>

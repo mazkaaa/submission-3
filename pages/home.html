@@ -1,0 +1,25 @@
+<div class="container">
+	<table class="responsive-table highlight">
+		<thead>
+			<tr>
+				<th>Rank</th>
+				<th class="hide-on-med-and-down">Emblem</th>
+				<th>Team</th>
+				<th>Played Games</th>
+				<th>Won</th>
+				<th>Lost</th>
+				<th>Draw</th>
+				<th>Points</th>
+			</tr>
+		</thead>
+		<tbody id="standingsTable">
+			<h2>Top Standings</h2>
+			<script>
+				// REQUEST API UNTUK PERTAMA KALI
+				  document.addEventListener("DOMContentLoaded", function() {
+					  getStandings();
+				  });
+			</script>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,17 @@
+{
+    "name": "Fooball",
+    "gcm_sender_id": "484973273532",
+    "short_name": "Fooball",
+    "description": "Football site portal",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#fafafa",
+    "theme_color": "#039be5",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
