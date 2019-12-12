@@ -28,6 +28,15 @@ function error(error) {
 	console.log("Error : " + error);
 }
 
+const fetchApi = function(url){
+	return fetch(url, {
+		mode: "cors",
+		headers: {
+			"X-Auth-Token": api_token
+		}
+	})
+}
+
 function getStandingsJson(data){
 	data = JSON.parse(JSON.stringify(data).replace(/^http:\/\//i, 'https://'));
 	var standingsHTML = "";
@@ -64,12 +73,7 @@ function getStandings(){
 			}
 		});
 	}
-	fetch(api_url_standings, {
-		mode: "cors",
-		headers: {
-			"X-Auth-Token": api_token
-		}
-	}).then(status).then(json).then(function(data) {
+	fetchApi(api_url_standings).then(status).then(json).then(function(data) {
 		getStandingsJson(data);
 	}).catch(error);
 }
@@ -84,12 +88,7 @@ function getMatch(){
 			}
 		});
 	}
-	fetch(api_url_match, {
-		mode: "cors",
-		headers: {
-			"X-Auth-Token": api_token
-		}
-	}).then(status).then(json).then(function(data){
+	fetchApi(api_url_match).then(status).then(json).then(function(data){
 		getMatchJson(data);
 	}).catch(error);
 }
@@ -140,12 +139,7 @@ function getTeamsById(){
 				}
 			});
 		}
-		fetch(api_url_teams + idParam, {
-			mode: "cors",
-			headers: {
-				"X-Auth-Token": api_token,
-			}
-		}).then(status).then(json).then(function(data) {
+		fetchApi(api_url_teams + idParam).then(status).then(json).then(function(data) {
 			getTeamJson(data);
 			resolve(data);
 		}).catch(error);
