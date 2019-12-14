@@ -8,8 +8,8 @@ if (workbox) {
 }
 
 workbox.precaching.precacheAndRoute([
-	{ url: './', revision: '1'},
-	{ url: './icon.png', revision: '1'},
+	{ url: './', revision: '2'},
+	{ url: './icon.png', revision: '2'},
 	{ url: './icons/icon-128x128.png', revision: '1'},
 	{ url: './icons/icon-144x144.png', revision: '1'},
 	{ url: './icons/icon-152x152.png', revision: '1'},

@@ -38,7 +38,7 @@ const fetchApi = function(url){
 }
 
 function getStandingsJson(data){
-	data = JSON.parse(JSON.stringify(data).replace(/^http:\/\//g, 'https://'));
+	data = JSON.parse(JSON.stringify(data).replace(/http:/g, 'https:'));
 	var standingsHTML = "";
 	let rankNumber = 0;
 	data.standings.slice(0, 10).forEach(function(standingsData){
@@ -94,7 +94,7 @@ function getMatch(){
 }
 
 function getMatchJson(data){
-	data = JSON.parse(JSON.stringify(data).replace(/^http:\/\//g, 'https://'));
+	data = JSON.parse(JSON.stringify(data).replace(/http:/g, 'https:'));
 	var matchHTML = "";
 	data.matches.slice(0, 10).forEach(function(match){
 		matchHTML += `
@@ -114,7 +114,7 @@ function getMatchJson(data){
 }
 
 function getTeamJson(data) {
-	data = JSON.parse(JSON.stringify(data).replace(/^http:\/\//g, 'https://'));
+	data = JSON.parse(JSON.stringify(data).replace(/http:/g, 'https:'));
 	document.getElementById("team-emblem").src = data.crestUrl;
 	document.getElementById("team-name").innerHTML = data.name;
 	document.getElementById("team-address").innerHTML = data.address;
