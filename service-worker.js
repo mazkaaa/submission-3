@@ -1,4 +1,4 @@
-var api_url = "https://api.football-data.org/v2/";
+const api_url = "https://api.football-data.org/v2/";
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
 
 if (workbox) {
@@ -55,6 +55,10 @@ workbox.routing.registerRoute(
 	workbox.strategies.cacheFirst({
 		cacheName: 'pages-cache'
 	})
+);
+workbox.routing.registerRoute(
+	new RegExp('./'),
+	workbox.strategies.staleWhileRevalidate()
 );
 
 workbox.routing.registerRoute(
