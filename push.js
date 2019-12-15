@@ -1,4 +1,4 @@
-var webPush = require('web-push');
+const webPush = require('web-push');
  
 const vapidKeys = {
 	"publicKey": "BLGyOU_n3bJwvIKfFWPLpE5SnhJnZG-_D68890m0Gw0XexinN9U_Oj06DEGJ7u9FuIiPU-Le9Ij_18VYeiXmdcU",
@@ -18,9 +18,9 @@ var pushSubscription = {
 		"auth": "L+oNtvdqW703qpXzvZg7mw=="
 	}
 };
-var payload = 'Selamat! Aplikasi Anda sudah dapat menerima push notifikasi!';
+const payload = 'Selamat! Aplikasi Anda sudah dapat menerima push notifikasi!';
  
-var options = {
+const options = {
 	gcmAPIKey: '484973273532',
 	TTL: 60
 };
