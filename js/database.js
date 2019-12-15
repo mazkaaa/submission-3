@@ -1,5 +1,5 @@
-var dbName = "fooball_db";
-var favTeam = "favTeam";
+const dbName = "fooball_db";
+const favTeam = "favTeam";
 
 function databaseSetup(idb){
 	var dbPromise = idb.open(dbName, 1, function(upgradeDb) {
@@ -69,8 +69,10 @@ function addTeamToFav(data){
 		return tx.complete;
 	}).then(function() {
 		alert("Data successfully favourited!");
+		M.toast({html: 'Data successfully favourited!'})
 	}).catch(function(){
 		alert("Data failed favourited!");
+		M.toast({html: 'Data failed favourited!'})
 	});
 }
 
@@ -82,8 +84,10 @@ function removeTeamFromFav(id){
 		return tx.complete;
 	}).then(function(){
 		alert("Successfully remove team from favourite!");
+		M.toast({html: 'Successfully remove team from favourite!'})
 	}).catch(function(){
 		alert("Failed to remove team from favourite!");
+		M.toast({html: 'Failed to remove team from favourite!'})
 	});
 }
 
